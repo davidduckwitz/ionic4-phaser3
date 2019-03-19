@@ -33,7 +33,8 @@ export class NotBoringHelloSceneService extends Phaser.Scene {
     this.load.image('ground', 'assets/images/ground.png');
     this.load.image('grass', 'assets/images/grass.png');
 
-    this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
+		this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
+		this.load.spritesheet('girl', 'assets/girl-1.png', { frameWidth: 32, frameHeight: 48 });
     this.sceneWidthHalf = window.innerWidth / 2;
 	
   }
@@ -55,7 +56,7 @@ export class NotBoringHelloSceneService extends Phaser.Scene {
 	this.platforms.create(50, 250, 'ground');
 	this.platforms.create(750, 220, 'ground');
 	
-    this.dude = this.physics.add.sprite(this.sceneWidthHalf, 0, 'dude');
+    this.dude = this.physics.add.sprite(this.sceneWidthHalf, 0, 'girl');
 	this.physics.add.collider(this.dude, this.platforms);
 	//  We need to enable physics on the player
     // this.physics.arcade.enable(this.dude);
@@ -64,20 +65,20 @@ export class NotBoringHelloSceneService extends Phaser.Scene {
 
     this.anims.create({
       key: 'left',
-      frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
+      frames: this.anims.generateFrameNumbers('girl', { start: 0, end: 3 }),
       frameRate: 10,
       repeat: -1
     });
 
     this.anims.create({
       key: 'turn',
-      frames: [{ key: 'dude', frame: 4 }],
+      frames: [{ key: 'girl', frame: 4 }],
       frameRate: 20
     });
 
     this.anims.create({
       key: 'right',
-      frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
+      frames: this.anims.generateFrameNumbers('girl', { start: 5, end: 8 }),
       frameRate: 10,
       repeat: -1
     });

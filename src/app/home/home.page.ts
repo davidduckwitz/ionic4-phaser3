@@ -14,9 +14,15 @@ export class HomePage {
     title: environment.title,
     version: environment.version,
     type: Phaser.AUTO,
+    scale: {
+      mode: Phaser.Scale.FIT,      
+      autoCenter: Phaser.Scale.CENTER_BOTH,
+      width: 800,
+      height: 600
+    },
     width: window.innerWidth,
     height: window.innerHeight -90,
-	backgroundColor: "#dbcf8b",
+	  backgroundColor: "#dbcf8b",
     physics: {
       default: 'arcade',
       arcade: {
